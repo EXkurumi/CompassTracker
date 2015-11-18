@@ -33,6 +33,7 @@ if($p->getInventory()->getItemInHand()->getId() === 345 && $ev->getAction() === 
 		if(in_array($ev->getPlayer()->getName(), $this->compass)){
 		$p->sendMessage("§c§lYou cant use this for 3 minutes!");
 		$ev->setCancelled(true);
+		return;
 		}
 		 		if(!in_array($ev->getPlayer()->getName(), $this->compass)){
 		 	
