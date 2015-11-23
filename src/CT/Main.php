@@ -13,6 +13,7 @@ use pocketmine\scheduler\CallbackTask;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\block\Block;
 use pocketmine\event\player\PlayerInteractEvent;
+use pocketmine\event\Listener;
 
 
 class Main extends PluginBase implements Listener
