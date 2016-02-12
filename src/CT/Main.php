@@ -45,15 +45,7 @@ if($p->getInventory()->getItemInHand()->getId() === 345 && $ev->getAction() === 
 		 	$this->getServer()->getScheduler()->scheduleDelayedTask($task, 3600);
 $pickqv = [];
 $distSqMap = [];
-foreach($p->getLevel()->getPlayers() as $player){
-  if($player === $p) $p->sendMessage("no one is near you!"); continue;
-  $distSq = $player->distanceSquared($p); 
-  if($distSq < 4096){
-    $picked[$player->getId()] = $player;
-    $distSqMap[$player->getId()] = $distSq;
-  }
-}
-
+foreach($p->getLevel()->getPlayers() as $player)
 asort($distSqMap);
 foreach($distSqMap as $id => $distSq){
   $p->sendMessage("§b§l".$picked[$id]->getDisplayName() . " §fis §c" . round(sqrt($distSq)) . " §fblocks from you."); 
